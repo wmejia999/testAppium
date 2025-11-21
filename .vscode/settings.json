@@ -1,0 +1,13 @@
+{
+    "json.schemas": [
+
+    ],
+    
+    "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.vscode": false,
+    "**/.venv": true,
+    "**/.idea": true
+  }
+}
