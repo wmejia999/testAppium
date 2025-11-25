@@ -21,8 +21,8 @@ def test_password_incorrecto(driver):
 def test_login_correcto(driver):
     try:
         login = LoginPage(driver)
-        login.ingresar_credenciales("ika.17","1234")
+        login.ingresar_credenciales("preikaw","123")
         login.login()
-        assert login.esta_visible()
+        assert login.alert_esta_visible()
     except Exception as e:
         print(f"Error durante la prueba: {e}")

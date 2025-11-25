@@ -9,3 +9,10 @@ console = logging.StreamHandler()
 console.setFormatter(formatter)
 
 logger.addHandler(console)
+
+"""
+StreamHandler → imprime en la consola.
+FileHandler → guardar logs en un archivo
+SMTPHandler → enviar logs por correo
+HTTPHandler → enviarlos a un servidor
+"""

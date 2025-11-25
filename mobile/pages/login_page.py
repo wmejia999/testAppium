@@ -32,6 +32,10 @@ class LoginPage(BasePage):
         AppiumBy.XPATH,
         "//android.widget.Toast[@text='No se encontró una cuenta activa con las credenciales proporcionadas']"
     )
+    content_alert_ok = (
+        AppiumBy.ANDROID_UIAUTOMATOR,
+        'new UiSelector().className("android.view.View").instance(2)'
+    )
 
     def ingresar_credenciales(self, usuario, contrasena):
         self.input_element(
@@ -63,3 +67,6 @@ class LoginPage(BasePage):
 
     def text_esta_visible(self):
         return self.is_visible(self.text_empty)
+
+    def alert_esta_visible(self):
+        return self.is_visible(self.content_alert_ok)
