@@ -2,11 +2,11 @@ import time
 from appium.webdriver.common.appiumby import AppiumBy
 from mobile.core.base_page import BasePage
 
-class LoginPage(BasePage):
+class RequestsPage(BasePage):
 
-    contenedor = (
+    contenedor_assigned = (
         AppiumBy.ANDROID_UIAUTOMATOR,
-        'new UiSelector().className("android.view.View").instance(2)'
+        'new UiSelector().className("android.view.View").instance(9)'
     )
 
     btn_encender_GPS = (
@@ -49,16 +49,11 @@ class LoginPage(BasePage):
             self.btn_encender_GPS,
             "btn_encender_GPS"
         )
-        self.driver.back()
-        self.driver.back()
-
-
-    def ver_detalle_asistencia(self):
         self.click_element(
-            self.card_asistances,
-            "card_asistances"
+            self.check_activar_ubicacion,
+            "check_activar_ubicacion"
         )
-        self.driver.back()
+
 
     def aceptar_asistencia(self):
         self.click_element(
@@ -72,12 +67,13 @@ class LoginPage(BasePage):
             "btn_confirm_asistances"
         )
 
+    #Esta alerta se genera cuando se detecta que no hay permisos de GPS
+    def btn_GPS_visible(self):
+        return self.is_visible(self.btn_encender_GPS)
 
     def contenedor_visible(self):
-        return self.is_visible(self.contenedor)
+        return self.is_visible(self.contenedor_assigned)
 
-    def toast_visible(self):
-        return self.is_visible(self.toast_empty_asistances)
 
     def content_card_visible(self):
         return self.is_visible(self.content_card_asistances)
