@@ -1,9 +1,9 @@
 from urllib3 import request
 
-from pages.mobile.request_page import RequestsPage
-from pages.mobile.login_page import LoginPage
-from pages.mobile.assigned_page import AssignedPage
-from pages.mobile.map_page import MapPage
+from e2e.pages.mobile.request_page import RequestsPage
+from e2e.pages.mobile.login_page import LoginPage
+from e2e.pages.mobile.assigned_page import AssignedPage
+from e2e.pages.mobile.map_page import MapPage
 
 #Parte 1: Aceptar servicio emergencia
 def test_login_aceptar_asistencia(driver):
