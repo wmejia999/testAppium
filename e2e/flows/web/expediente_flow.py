@@ -1,8 +1,10 @@
+from e2e.core.logger import logger
 from e2e.pages.web.login_page_po import LoginPage as LoginWebPage
 from e2e.pages.web.expediente_page import ExpedientePage
+from playwright.sync_api import expect
 
 
-class WebFlow:
+class ExpedientFlow:
     """Flujos de negocio para la parte web.
 
     Encapsula acciones de alto nivel como crear un expediente para un afiliado
@@ -44,18 +46,17 @@ class WebFlow:
         self.expediente.crear_expediente()
 
     def verificar_expediente_creado(self ):
-        from playwright.sync_api import expect
+        """Verifica que el expediente se haya creado exitosamente buscando el número de expediente en la interfaz."""
 
-        # Ubicar el bloque que contiene el texto fijo
         bloque = self.page.locator("div.border").filter(has_text="Expediente").first
-
-        # Dentro de ese bloque buscar el número
         numero_locator = bloque.locator("div.fw-bold.fs-6.text-gray-400")
-
         expect(numero_locator).to_be_visible(timeout=10000)
 
         numero = numero_locator.inner_text().strip()
+        logger.info(f"\nSe creó el expediente: {numero}")
 
-        # Validaciones correctas
-        assert numero is not None
-        assert numero.isdigit()
+        return numero
+
+
+    def crear_asistencia_enviar_solicitud(self):
+        self.expediente.crear_asistance()

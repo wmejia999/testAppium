@@ -1,6 +1,5 @@
 from appium.options.android import UiAutomator2Options
 
-
 def get_android_options():
     options = UiAutomator2Options()
     options.platform_name = "Android"
@@ -14,3 +13,4 @@ def get_android_options():
 
     #Usar app en formato APK
     #options.app = "/Users/wendymejia/Downloads/Apks/app-basenewsoa-qa.apk
+

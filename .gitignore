@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Variables de entorno
+.env
+.env.*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+.cache/
+
+# Testing
+.pytest_cache/
+test-results/
+playwright-report/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Base de datos
+*.sqlite3
+
+# Appium
+*.apk
+*.ipa
+
+# Reportes
+reports/
+allure-results/
+allure-report/e2e/tests_e2e/web/node_modules/
